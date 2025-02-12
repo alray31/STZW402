@@ -38,3 +38,5 @@ Ce blueprint effectue les actions suivantes:
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/AlainRaymond564)
 
 [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https://github.com/alray31/STZW402/blob/main/StelproKi.yaml)
+
+![image](https://github.com/user-attachments/assets/955ad5d2-f90a-4782-97a0-92e574a41671)
