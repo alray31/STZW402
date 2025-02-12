@@ -44,7 +44,6 @@ blueprint:
           name: Temp sensor / Capteur de température
           description: |
             Outdoor temp sensor to use
-
             Capteur de température éxtérieur à utiliser
           selector:
             entity:
