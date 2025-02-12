@@ -1,2 +1,40 @@
-# STZW402
-Home Assistant blueprint for displyaing outdoor tempreature on Stelpro Ki Z-Wave STZW402+ thermostats
+# Stelpro Ki Z-Wave - Outdoor Temperature
+Home Assistant Z-Wave JS / Z-Wave JS UI blueprint for displaying outdoor temperature on Stelpro Ki Z-Wave STZW402+ thermostats
+Blueprint Home Assistant Z-Wave JS / Z-Wave JS UI pour afficher la température extérieure sur les thermostats Stelpro Ki Z-Wave STZW402+
+
+<img src="https://github.com/user-attachments/assets/7e13b9b7-c5ce-4e10-933d-20930804cef6" width="300" />
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/AlainRaymond564)
+
+[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https://github.com/alray31/STZW402/blob/main/StelproKi.yaml)
+
+## English:
+This blueprint does the following:
+  
+* Retrieves the outdoor temperature from the selected temperature sensor.
+* Sends the outdoor temperature to the Stelpro Ki Z-Wave thermostat **(Model STZW402+ only)**.
+* Updates the display automatically when the outdoor temperature changes.
+### Notes:
+* Target product reference: https://products.z-wavealliance.org/products/1603
+* Do not use this blueprint for other thermostat models
+* EXT temperature mode must be enabled from the thermostat advanced settings menu. Refer to manufacturer instructions:
+* https://products.z-wavealliance.org/ProductManual/File?folder=&filename=MarketCertificationFiles/1603/INS_STZW402_1215_EN.pdf
+* Note that the first outdoor temperature sync on the thermostat display will occur once the outdoor temperature sensor changes its value for the first time after this automation is set up.
+
+
+## Francais:
+Ce blueprint effectue les actions suivantes:  
+
+* Récupère la température extérieure depuis le capteur de température sélectionné.  
+* Envoie la température extérieure au thermostat Stelpro Ki Z-Wave **(modèle STZW402+ uniquement)**.  
+* Met à jour l'affichage automatiquement lorsque la température extérieure change.
+### Notes: 
+* Référence du produit ciblé: https://products.z-wavealliance.org/products/1603  
+* Ne pas utiliser ce blueprint pour d'autres modèles de thermostats.  
+* Le mode température EXT doit être activé depuis le menu des paramètres avancés du thermostat. Consultez les instructions du fabricant :  
+* https://products.z-wavealliance.org/ProductManual/File?folder=&filename=MarketCertificationFiles/1603/INS_STZW402_1215_EN.pdf  
+* Notez que la première synchronisation de la température extérieure sur l'affichage du thermostat aura lieu une fois que le capteur de température extérieure aura changé de valeur pour la première fois après la configuration de cette automatisation.
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/AlainRaymond564)
+
+[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https://github.com/alray31/STZW402/blob/main/StelproKi.yaml)
