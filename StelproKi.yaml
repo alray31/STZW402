@@ -1,0 +1,90 @@
+blueprint:
+  name: Stelpro Ki Z-Wave - Outdoor Temperature
+  description: |
+    **English:**
+    *This automation does the following:*
+  
+    - Retrieves the outdoor temperature from the selected sensor.
+    - Sends the outdoor temperature to the Stelpro Ki Z-Wave thermostat **(Model STZW402+ only)**.
+    - Updates the display automatically when the outdoor temperature changes.
+    - Target product reference: https://products.z-wavealliance.org/products/1603
+    - Do not use this blueprint for other thermostat models
+    - EXT temperature mode must be enabled from the thermostat advanced settings menu. Refer to manufacturer instructions:
+    - https://products.z-wavealliance.org/ProductManual/File?folder=&filename=MarketCertificationFiles/1603/INS_STZW402_1215_EN.pdf
+    - Note that the first outdoor temperature sync on the thermostat display will occur once the outdoor temperature sensor changes its value for the first time after this automation is set up.
+    - Version 1.0 https://github.com/alray31/STZW402
+
+    **Francais:**
+    *Cette automatisation effectue les actions suivantes:*  
+
+    - Récupère la température extérieure depuis le capteur sélectionné.  
+    - Envoie la température extérieure au thermostat Stelpro Ki Z-Wave **(modèle STZW402+ uniquement)**.  
+    - Met à jour l'affichage automatiquement lorsque la température extérieure change.  
+    - Référence du produit cible : https://products.z-wavealliance.org/products/1603  
+    - Ne pas utiliser ce blueprint pour d'autres modèles de thermostats.  
+    - Le mode température EXT doit être activé depuis le menu des paramètres avancés du thermostat. Consultez les instructions du fabricant :  
+    - https://products.z-wavealliance.org/ProductManual/File?folder=&filename=MarketCertificationFiles/1603/INS_STZW402_1215_EN.pdf  
+    - Notez que la première synchronisation de la température extérieure sur l'affichage du thermostat aura lieu une fois que le capteur de température extérieure aura changé de valeur pour la première fois après la configuration de cette automatisation.
+    - Version 1.0 https://github.com/alray31/STZW402 
+  
+  author: Alain Raymond
+  domain: automation
+  homeassistant:
+    min_version: 2024.6.0
+  input:
+    input_sensor:
+      name: Outdoor temp sensor
+      description: |
+        The sensor to use as outdoor temperature (i.e. a physical sensor or a sensor from a weather integration)
+        
+        Le capteur à utiliser pour la température extérieure (ex: provenant d'un capteur physique un d'une intégration météo)
+      icon: mdi:thermometer
+      input:
+        out_temp:
+          name: Temp sensor / Capteur de température
+          description: |
+            Outdoor temp sensor to use
+
+            Capteur de température éxtérieur à utiliser
+          selector:
+            entity:
+              filter:
+                - domain: sensor
+                  device_class: temperature
+    output_thermostats:
+      name: Stelpro Ki Z-Wave (STZW402+) Thermostat(s) selection
+      description: |
+        Select the thermostat(s) you want to sync outdoor temperature on
+        
+        Selectionner les thermostat(s) sur le(s)quel(s) vous voulez synchroniser la température extérieure
+      icon: mdi:z-wave
+      input:
+        target_climate:
+          name: Thermostat(s)
+          description: |
+            (Z-wave Stelpro Ki only)
+            (Z-wave Stelpro Ki seulement)
+          selector:
+            entity:
+              multiple: true
+              filter:
+                - domain: climate
+triggers:
+  - trigger: state
+    entity_id: !input out_temp
+
+
+actions:
+  - variables:
+      outdoor_temp: !input out_temp
+  - action: zwave_js.invoke_cc_api
+    target:
+      entity_id: !input target_climate
+    data:
+      command_class: 49
+      method_name: sendReport
+      parameters:
+        - 1
+        - 0
+        - "{{ states(outdoor_temp) | round(2, default=99) }}"
+      endpoint: 0
