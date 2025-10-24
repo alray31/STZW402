@@ -15,10 +15,10 @@ This blueprint does the following:
 * Sends the outdoor temperature to the Stelpro Ki Z-Wave thermostat **(Model STZW402+ only)**.
 * Updates the display automatically when the outdoor temperature changes.
 ### Notes:
-* Target product reference: https://products.z-wavealliance.org/products/1603
+* Target product reference: https://products.z-wavealliance.org/z-wave-product/ki-electronic-thermostat-for-smart-home-3/
 * Do not use this blueprint for other thermostat models
 * EXT temperature mode must be enabled from the thermostat advanced settings menu. Refer to manufacturer instructions:
-* https://products.z-wavealliance.org/ProductManual/File?folder=&filename=MarketCertificationFiles/1603/INS_STZW402_1215_EN.pdf
+* https://products.z-wavealliance.org/wp-content/uploads/products/50042/INS_STZW402_1215_EN.pdf
 * Note that the first outdoor temperature sync on the thermostat display will occur once the outdoor temperature sensor changes its value for the first time after this automation is set up.
 
 
@@ -29,10 +29,10 @@ Ce blueprint effectue les actions suivantes:
 * Envoie la température extérieure au thermostat Stelpro Ki Z-Wave **(modèle STZW402+ uniquement)**.  
 * Met à jour l'affichage automatiquement lorsque la température extérieure change.
 ### Notes: 
-* Référence du produit ciblé: https://products.z-wavealliance.org/products/1603  
+* Référence du produit ciblé: https://products.z-wavealliance.org/z-wave-product/ki-electronic-thermostat-for-smart-home-3/
 * Ne pas utiliser ce blueprint pour d'autres modèles de thermostats.  
 * Le mode température EXT doit être activé depuis le menu des paramètres avancés du thermostat. Consultez les instructions du fabricant :  
-* https://products.z-wavealliance.org/ProductManual/File?folder=&filename=MarketCertificationFiles/1603/INS_STZW402_1215_EN.pdf  
+* https://products.z-wavealliance.org/wp-content/uploads/products/50042/INS_STZW402_1215_EN.pdf  
 * Notez que la première synchronisation de la température extérieure sur l'affichage du thermostat aura lieu une fois que le capteur de température extérieure aura changé de valeur pour la première fois après la configuration de cette automatisation.
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/AlainRaymond564)
